@@ -28,12 +28,7 @@
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact", contact_path %></li>
           </ul>
-          <form class="search-form navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+          <%= render 'partials/admin/search' %>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

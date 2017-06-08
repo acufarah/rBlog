@@ -5,6 +5,11 @@ class Admin::PostsController < Admin::ApplicationController
   
   def create
     @post = Post.new(post_params)
+
+    if params[:post][:image].blank?
+      @post.image = nil
+    end  
+
     if @post.save
       flash[:notice] = 'Post Created'
       redirect_to admin_posts_path
@@ -19,6 +24,10 @@ class Admin::PostsController < Admin::ApplicationController
 
   def update
     @post= Post.find(params[:id])
+
+    if params[:post][:image].blank?
+      @post.image = nil
+    end  
 
     if @post.update(post_params)
       flash[:notice] = 'Post Updated'
@@ -35,7 +44,11 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def index
-    @posts= Post.all
+    if params[:search]
+      @posts= Post.all.search(params[:search]).order('created_at DESC')
+    else 
+      @posts= Post.all.order('created_at DESC')
+    end
   end
 
   def show
@@ -52,5 +65,5 @@ class Admin::PostsController < Admin::ApplicationController
     def post_params
       params.require(:post).permit(:title, :category_id, :user_id, :tags, :image, :body)
     end
-   
+ 
 end

@@ -1,59 +1,24 @@
-         
+<div id = "posts-index">
+  <% if @posts.exists? %>
+    <% @posts.each_slice(2) do |post| %>
+    <div class = "row">
+      <% post.each do |post| %>
+        <div class = "col-md-6">
+          <div class = "post">
             
-    <div class="row">
-              <div class="col-md-6">
-              <div class="post">
-   				<img src="images/rails1.jpg">
-   				<div class="post-content">
-   				  <h3>Lorem Ipsum</h3>	
-   				  <small>Posted by Farah on May 6, 2017</small>
-   				  <p>Disrupt selvage DIY, williamsburg succulents etsy kale chips. Keffiyeh meh man braid, messenger bag roof party farm-to-table letterpress leggings raclette drinking vinegar. Pickled tumeric kombucha, messenger bag portland pitchfork whatever flannel actually williamsburg etsy. DIY jianbing cardigan seitan semiotics, intelligentsia kale chips wayfarers single-origin coffee. 
-   				  </p>
-   				  <a class="btn btn-primary btn-block">Read More</a>
-              </div>
-              </div>
-              </div>
-              <div class="col-md-6">
-              <div class="post">
-   				<img src="images/rails1.jpg">
-   				<div class="post-content">
-   				  <h3>Lorem Ipsum</h3>	
-   				  <small>Posted by Farah on May 6, 2017</small>
-   				  <p>Disrupt selvage DIY, williamsburg succulents etsy kale chips. Keffiyeh meh man braid, messenger bag roof party farm-to-table letterpress leggings raclette drinking vinegar. Pickled tumeric kombucha, messenger bag portland pitchfork whatever flannel actually williamsburg etsy. DIY jianbing cardigan seitan semiotics, intelligentsia kale chips wayfarers single-origin coffee. 
-   				  </p>
-   				  <a class="btn btn-primary btn-block">Read More</a>	
-              </div>	
-
+            <div class = "post-content">
+              <h3><%= post.title %></h3>
+              <small>Posted by <%= post.user.name %> on <%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %></small>
+              <%= raw post.body.truncate(200) %>
+              <%= link_to "Read More", post_path(post), class:'btn btn-primary' %>
             </div>
-           </div> 
-         </div>
-         
-
-         <div class="row">
-              <div class="col-md-6">
-              <div class="post">
-   				<img src="images/rails1.jpg">
-   				<div class="post-content">
-   				  <h3>Lorem Ipsum</h3>	
-   				  <small>Posted by Farah on May 6, 2017</small>
-   				  <p>Disrupt selvage DIY, williamsburg succulents etsy kale chips. Keffiyeh meh man braid, messenger bag roof party farm-to-table letterpress leggings raclette drinking vinegar. Pickled tumeric kombucha, messenger bag portland pitchfork whatever flannel actually williamsburg etsy. DIY jianbing cardigan seitan semiotics, intelligentsia kale chips wayfarers single-origin coffee. 
-   				  </p>
-   				  <a class="btn btn-primary btn-block">Read More</a>
-              </div>
-              </div>
-              </div>
-              <div class="col-md-6">
-              <div class="post">
-   				<img src="images/rails1.jpg">
-   				<div class="post-content">
-   				  <h3>Lorem Ipsum</h3>	
-   				  <small>Posted by Farah on May 6, 2017</small>
-   				  <p>Disrupt selvage DIY, williamsburg succulents etsy kale chips. Keffiyeh meh man braid, messenger bag roof party farm-to-table letterpress leggings raclette drinking vinegar. Pickled tumeric kombucha, messenger bag portland pitchfork whatever flannel actually williamsburg etsy. DIY jianbing cardigan seitan semiotics, intelligentsia kale chips wayfarers single-origin coffee. 
-   				  </p>
-   				  <a class="btn btn-primary btn-block">Read More</a>	
-              </div>	
-             </div> 
-            </div>
-           </div> 
-         </div>        
-        
+          </div>        
+        </div>
+      <% end %>
+    </div>
+  <% end %>    
+  <% else %>
+    <p>No posts yet</p>
+  <% end %>
+</div>        
+      

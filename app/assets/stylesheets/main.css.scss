@@ -35,7 +35,7 @@ body {
 	color: $secondary-color !important;
 }
 
-.search-form {
+.search-form{
 	margin-top: 30px;
 }
 
@@ -43,6 +43,15 @@ body {
 	border-radius: 0;
 	height: 38px;
 }
+
+.search-form .form-group{
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+
+.search-form input
 
 .search-form .btn{
 	border: 0;

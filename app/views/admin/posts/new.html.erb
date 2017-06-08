@@ -1,3 +1,22 @@
+ <script>
+  $(function() {
+    $('textarea#froala-editor').froalaEditor()    
+  });
+
+
+  $(function() {
+    $('div#froala-editor').froalaEditor({
+      toolbarInline: true,
+      charCounterCount: false,
+      toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo'],
+      toolbarVisibleWithoutSelection: true
+    })
+  });
+
+</script>
+
+
+
 <h2>Add New Post</h2>
 
 <%= form_for [:admin, @post] do |f| %>
@@ -32,7 +51,7 @@
 </div>
 <div class= "form-group">
 	<%= f.label :body %>
-	<%= f.text_area :body , class:'form-control' %>
+	<%= f.text_area :body , class:'form-control', id:'froala-editor' %>
 </div>
 
 <br>

@@ -35,6 +35,16 @@ gem 'execjs', '~> 2.7'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'mail_form', '~> 1.6'
 gem 'simple_form', '~> 3.4'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+
+gem 'climate_control', '~> 0.2.0'
+gem 'cocaine', '~> 0.5.8'
+gem 'mimemagic', '~> 0.3.2'
+gem 'paperclip', '~> 5.1'
+
+gem 'font_awesome', '~> 3.101'
+gem 'font-awesome-sass', '~> 4.7'
+gem 'wysiwyg-rails', '~> 2.6', '>= 2.6.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

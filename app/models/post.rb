@@ -7,4 +7,10 @@ class Post < ApplicationRecord
 	validates :category_id, presence: true
 	validates :body, presence: true
 
+	has_attached_file :image, :default_url => ":style/rails1.jpg"
+	validates_attachment_content_type :image, :content_type =>/\Aimage\/.*\Z/
+	
+	def self.search(query)
+		where("title LIKE ? OR category_id LIKE ? OR body LIKE ?", "%#{query}%", "%#{query}%", "%#{query}%")
+	end	
 end
