@@ -1,4 +1,7 @@
 class Admin::UsersController < Admin::ApplicationController
+  
+  before_filter :verify_logged_in
+
   def new
     @user = User.new
   end
@@ -55,7 +58,7 @@ class Admin::UsersController < Admin::ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password)
+      params.require(:user).permit(:name, :email, :password, :password_hash)
     end
    
 end

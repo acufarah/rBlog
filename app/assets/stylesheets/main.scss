@@ -82,7 +82,7 @@ body {
 .post {
 	border:1px #ccc solid;
 	background: #fff;
-	margin-bottom: 30px;
+	margin-top: 20px;
 }
 
 .post img{
@@ -90,7 +90,7 @@ body {
 }
 
 .post-content{
-	padding: 20px;
+	padding: 10px;
 	box-sizing:border-box;
 }
 
@@ -99,11 +99,25 @@ body {
 	padding:0;
 }
 
-.post small{
+small{
 	background: $primary-color;
 	color: #fff;
 	margin:10px 0;
 
+}
+
+.post .btn{
+	display: block;
+	margin-top: 20px;
+}
+
+.comments img {
+	width: 100%;
+}
+
+.comments .btn{
+	display: block;
+	margin-top: 20px;
 }
 
 footer {

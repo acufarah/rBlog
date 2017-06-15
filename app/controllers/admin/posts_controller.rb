@@ -1,4 +1,7 @@
 class Admin::PostsController < Admin::ApplicationController
+  
+  before_filter :verify_logged_in
+
   def new
     @post = Post.new
   end
@@ -45,9 +48,9 @@ class Admin::PostsController < Admin::ApplicationController
 
   def index
     if params[:search]
-      @posts= Post.all.search(params[:search]).order('created_at DESC')
+      @posts= Post.all.search(params[:search]).order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
     else 
-      @posts= Post.all.order('created_at DESC')
+      @posts= Post.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
     end
   end
 

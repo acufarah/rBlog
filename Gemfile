@@ -44,7 +44,7 @@ gem 'paperclip', '~> 5.1'
 
 gem 'font_awesome', '~> 3.101'
 gem 'font-awesome-sass', '~> 4.7'
-gem 'wysiwyg-rails', '~> 2.6', '>= 2.6.1'
+gem 'trix', '~> 0.10.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

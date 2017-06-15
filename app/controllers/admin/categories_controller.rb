@@ -1,4 +1,7 @@
 class Admin::CategoriesController < Admin::ApplicationController
+  
+  before_filter :verify_logged_in
+
   def new
     @category = Category.new
   end
@@ -35,13 +38,13 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def index
-  @categories = Category.all
-  if params[:search]
-    @categories = Category.search(params[:search]).order("created_at DESC")
-  else
-    @categories = Category.all.order("created_at DESC")
+    
+    if params[:search]
+      @categories= Category.all.search(params[:search]).order('created_at DESC')
+    else 
+      @categories= Category.all.order('created_at DESC')
+    end
   end
-end
 
 
   def show

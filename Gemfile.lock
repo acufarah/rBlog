@@ -159,6 +159,8 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
+    trix (0.10.1)
+      rails
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -175,9 +177,6 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     will_paginate (3.1.5)
-    wysiwyg-rails (2.6.1)
-      font-awesome-sass (~> 4.4, >= 4.4.0)
-      railties (>= 3.2, < 6.0)
 
 PLATFORMS
   ruby
@@ -206,12 +205,12 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
+  trix (~> 0.10.1)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
   will_paginate (~> 3.1, >= 3.1.5)
-  wysiwyg-rails (~> 2.6, >= 2.6.1)
 
 BUNDLED WITH
    1.14.6
